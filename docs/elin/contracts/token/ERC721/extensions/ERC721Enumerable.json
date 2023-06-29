@@ -1,0 +1,302 @@
+{
+    "methods": {
+        "approve(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function approve(address to, uint256 tokenId) external nonpayable",
+            "inputs": {
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {},
+            "details": "See {IERC721-approve}."
+        },
+        "balanceOf(address)": {
+            "stateMutability": "view",
+            "code": "function balanceOf(address owner) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721-balanceOf}."
+        },
+        "getApproved(uint256)": {
+            "stateMutability": "view",
+            "code": "function getApproved(uint256 tokenId) external view returns (address)",
+            "inputs": {
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "See {IERC721-getApproved}."
+        },
+        "isApprovedForAll(address,address)": {
+            "stateMutability": "view",
+            "code": "function isApprovedForAll(address owner, address operator) external view returns (bool)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "operator": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "See {IERC721-isApprovedForAll}."
+        },
+        "name()": {
+            "stateMutability": "view",
+            "code": "function name() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "See {IERC721Metadata-name}."
+        },
+        "ownerOf(uint256)": {
+            "stateMutability": "view",
+            "code": "function ownerOf(uint256 tokenId) external view returns (address)",
+            "inputs": {
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "See {IERC721-ownerOf}."
+        },
+        "safeTransferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function safeTransferFrom(address from, address to, uint256 tokenId) external nonpayable",
+            "inputs": {
+                "from": {
+                    "type": "address"
+                },
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {},
+            "details": "See {IERC721-safeTransferFrom}."
+        },
+        "safeTransferFrom(address,address,uint256,bytes)": {
+            "stateMutability": "nonpayable",
+            "code": "function safeTransferFrom(address from, address to, uint256 tokenId, bytes data) external nonpayable",
+            "inputs": {
+                "from": {
+                    "type": "address"
+                },
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                },
+                "data": {
+                    "type": "bytes"
+                }
+            },
+            "outputs": {},
+            "details": "See {IERC721-safeTransferFrom}."
+        },
+        "setApprovalForAll(address,bool)": {
+            "stateMutability": "nonpayable",
+            "code": "function setApprovalForAll(address operator, bool approved) external nonpayable",
+            "inputs": {
+                "operator": {
+                    "type": "address"
+                },
+                "approved": {
+                    "type": "bool"
+                }
+            },
+            "outputs": {},
+            "details": "See {IERC721-setApprovalForAll}."
+        },
+        "supportsInterface(bytes4)": {
+            "stateMutability": "view",
+            "code": "function supportsInterface(bytes4 interfaceId) external view returns (bool)",
+            "inputs": {
+                "interfaceId": {
+                    "type": "bytes4"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "See {IERC165-supportsInterface}."
+        },
+        "symbol()": {
+            "stateMutability": "view",
+            "code": "function symbol() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "See {IERC721Metadata-symbol}."
+        },
+        "tokenByIndex(uint256)": {
+            "stateMutability": "view",
+            "code": "function tokenByIndex(uint256 index) external view returns (uint256)",
+            "inputs": {
+                "index": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721Enumerable-tokenByIndex}."
+        },
+        "tokenOfOwnerByIndex(address,uint256)": {
+            "stateMutability": "view",
+            "code": "function tokenOfOwnerByIndex(address owner, uint256 index) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "index": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721Enumerable-tokenOfOwnerByIndex}."
+        },
+        "tokenURI(uint256)": {
+            "stateMutability": "view",
+            "code": "function tokenURI(uint256 tokenId) external view returns (string)",
+            "inputs": {
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "See {IERC721Metadata-tokenURI}."
+        },
+        "totalSupply()": {
+            "stateMutability": "view",
+            "code": "function totalSupply() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721Enumerable-totalSupply}."
+        },
+        "transferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferFrom(address from, address to, uint256 tokenId) external nonpayable",
+            "inputs": {
+                "from": {
+                    "type": "address"
+                },
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {},
+            "details": "See {IERC721-transferFrom}."
+        }
+    },
+    "events": {
+        "Approval": {
+            "code": "event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "approved": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "tokenId": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        },
+        "ApprovalForAll": {
+            "code": "event ApprovalForAll(address indexed owner, address indexed operator, bool approved)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "operator": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "approved": {
+                    "type": "bool",
+                    "indexed": false
+                }
+            }
+        },
+        "Transfer": {
+            "code": "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "to": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "tokenId": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "elin/contracts/token/ERC721/extensions",
+    "details": "This implements an optional extension of {ERC721} defined in the EIP that adds enumerability of all the token ids in the contract as well as all token ids owned by each account.",
+    "name": "ERC721Enumerable"
+}

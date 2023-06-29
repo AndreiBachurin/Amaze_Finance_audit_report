@@ -1,0 +1,30 @@
+{
+    "methods": {
+        "latestRoundData()": {
+            "stateMutability": "view",
+            "code": "function latestRoundData() external view returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound)",
+            "inputs": {},
+            "outputs": {
+                "roundId": {
+                    "type": "uint80"
+                },
+                "answer": {
+                    "type": "int256"
+                },
+                "startedAt": {
+                    "type": "uint256"
+                },
+                "updatedAt": {
+                    "type": "uint256"
+                },
+                "answeredInRound": {
+                    "type": "uint80"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/price-feeds",
+    "name": "IAggregatorV3Interface"
+}

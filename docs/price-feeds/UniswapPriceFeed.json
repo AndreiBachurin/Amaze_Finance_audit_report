@@ -1,0 +1,75 @@
+{
+    "methods": {
+        "estimateAmountOut(address,address,uint128,uint32,uint24)": {
+            "stateMutability": "view",
+            "code": "function estimateAmountOut(address tokenIn, address tokenOut, uint128 amountIn, uint32 secondsAgo, uint24 _fee) external view returns (uint256 amountOut)",
+            "inputs": {
+                "tokenIn": {
+                    "type": "address",
+                    "description": "token for which we are requesting a price "
+                },
+                "tokenOut": {
+                    "type": "address",
+                    "description": "token in which we request a price"
+                },
+                "amountIn": {
+                    "type": "uint128",
+                    "description": "1 * 10 ** decimals "
+                },
+                "secondsAgo": {
+                    "type": "uint32",
+                    "description": "price for 10 seconds ago"
+                },
+                "_fee": {
+                    "type": "uint24",
+                    "description": "fee of pool"
+                }
+            },
+            "outputs": {
+                "amountOut": {
+                    "type": "uint256",
+                    "description": "price of tokenIn "
+                }
+            },
+            "notice": "Returns the latest price of token"
+        },
+        "factory()": {
+            "stateMutability": "view",
+            "code": "function factory() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "getFactory()": {
+            "stateMutability": "view",
+            "code": "function getFactory() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address",
+                    "description": "factory factory address"
+                }
+            },
+            "notice": "Get factory address"
+        },
+        "setFactory(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setFactory(address _newAddress) external nonpayable",
+            "inputs": {
+                "_newAddress": {
+                    "type": "address",
+                    "description": "new factory address"
+                }
+            },
+            "outputs": {},
+            "notice": "Set factory address"
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/price-feeds",
+    "name": "UniswapPriceFeed"
+}

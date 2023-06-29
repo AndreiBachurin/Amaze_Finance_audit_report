@@ -1,0 +1,286 @@
+{
+    "methods": {},
+    "events": {
+        "Burn": {
+            "code": "event Burn(address indexed owner, int24 indexed tickLower, int24 indexed tickUpper, uint128 amount, uint256 amount0, uint256 amount1)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The owner of the position for which liquidity is removed"
+                },
+                "tickLower": {
+                    "type": "int24",
+                    "indexed": true,
+                    "description": "The lower tick of the position"
+                },
+                "tickUpper": {
+                    "type": "int24",
+                    "indexed": true,
+                    "description": "The upper tick of the position"
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false,
+                    "description": "The amount of liquidity to remove"
+                },
+                "amount0": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "The amount of token0 withdrawn"
+                },
+                "amount1": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "The amount of token1 withdrawn"
+                }
+            },
+            "notice": "Emitted when a position's liquidity is removed",
+            "details": "Does not withdraw any fees earned by the liquidity position, which must be withdrawn via #collect"
+        },
+        "Collect": {
+            "code": "event Collect(address indexed owner, address recipient, int24 indexed tickLower, int24 indexed tickUpper, uint128 amount0, uint128 amount1)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The owner of the position for which fees are collected"
+                },
+                "recipient": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "tickLower": {
+                    "type": "int24",
+                    "indexed": true,
+                    "description": "The lower tick of the position"
+                },
+                "tickUpper": {
+                    "type": "int24",
+                    "indexed": true,
+                    "description": "The upper tick of the position"
+                },
+                "amount0": {
+                    "type": "uint128",
+                    "indexed": false,
+                    "description": "The amount of token0 fees collected"
+                },
+                "amount1": {
+                    "type": "uint128",
+                    "indexed": false,
+                    "description": "The amount of token1 fees collected"
+                }
+            },
+            "notice": "Emitted when fees are collected by the owner of a position",
+            "details": "Collect events may be emitted with zero amount0 and amount1 when the caller chooses not to collect fees"
+        },
+        "CollectProtocol": {
+            "code": "event CollectProtocol(address indexed sender, address indexed recipient, uint128 amount0, uint128 amount1)",
+            "inputs": {
+                "sender": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The address that collects the protocol fees"
+                },
+                "recipient": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The address that receives the collected protocol fees"
+                },
+                "amount0": {
+                    "type": "uint128",
+                    "indexed": false,
+                    "description": "The amount of token1 protocol fees that is withdrawn"
+                },
+                "amount1": {
+                    "type": "uint128",
+                    "indexed": false
+                }
+            },
+            "notice": "Emitted when the collected protocol fees are withdrawn by the factory owner"
+        },
+        "Flash": {
+            "code": "event Flash(address indexed sender, address indexed recipient, uint256 amount0, uint256 amount1, uint256 paid0, uint256 paid1)",
+            "inputs": {
+                "sender": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The address that initiated the swap call, and that received the callback"
+                },
+                "recipient": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The address that received the tokens from flash"
+                },
+                "amount0": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "The amount of token0 that was flashed"
+                },
+                "amount1": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "The amount of token1 that was flashed"
+                },
+                "paid0": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "The amount of token0 paid for the flash, which can exceed the amount0 plus the fee"
+                },
+                "paid1": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "The amount of token1 paid for the flash, which can exceed the amount1 plus the fee"
+                }
+            },
+            "notice": "Emitted by the pool for any flashes of token0/token1"
+        },
+        "IncreaseObservationCardinalityNext": {
+            "code": "event IncreaseObservationCardinalityNext(uint16 observationCardinalityNextOld, uint16 observationCardinalityNextNew)",
+            "inputs": {
+                "observationCardinalityNextOld": {
+                    "type": "uint16",
+                    "indexed": false,
+                    "description": "The previous value of the next observation cardinality"
+                },
+                "observationCardinalityNextNew": {
+                    "type": "uint16",
+                    "indexed": false,
+                    "description": "The updated value of the next observation cardinality"
+                }
+            },
+            "notice": "Emitted by the pool for increases to the number of observations that can be stored",
+            "details": "observationCardinalityNext is not the observation cardinality until an observation is written at the index just before a mint/swap/burn."
+        },
+        "Initialize": {
+            "code": "event Initialize(uint160 sqrtPriceX96, int24 tick)",
+            "inputs": {
+                "sqrtPriceX96": {
+                    "type": "uint160",
+                    "indexed": false,
+                    "description": "The initial sqrt price of the pool, as a Q64.96"
+                },
+                "tick": {
+                    "type": "int24",
+                    "indexed": false,
+                    "description": "The initial tick of the pool, i.e. log base 1.0001 of the starting price of the pool"
+                }
+            },
+            "notice": "Emitted exactly once by a pool when #initialize is first called on the pool",
+            "details": "Mint/Burn/Swap cannot be emitted by the pool before Initialize"
+        },
+        "Mint": {
+            "code": "event Mint(address sender, address indexed owner, int24 indexed tickLower, int24 indexed tickUpper, uint128 amount, uint256 amount0, uint256 amount1)",
+            "inputs": {
+                "sender": {
+                    "type": "address",
+                    "indexed": false,
+                    "description": "The address that minted the liquidity"
+                },
+                "owner": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The owner of the position and recipient of any minted liquidity"
+                },
+                "tickLower": {
+                    "type": "int24",
+                    "indexed": true,
+                    "description": "The lower tick of the position"
+                },
+                "tickUpper": {
+                    "type": "int24",
+                    "indexed": true,
+                    "description": "The upper tick of the position"
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false,
+                    "description": "The amount of liquidity minted to the position range"
+                },
+                "amount0": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "How much token0 was required for the minted liquidity"
+                },
+                "amount1": {
+                    "type": "uint256",
+                    "indexed": false,
+                    "description": "How much token1 was required for the minted liquidity"
+                }
+            },
+            "notice": "Emitted when liquidity is minted for a given position"
+        },
+        "SetFeeProtocol": {
+            "code": "event SetFeeProtocol(uint8 feeProtocol0Old, uint8 feeProtocol1Old, uint8 feeProtocol0New, uint8 feeProtocol1New)",
+            "inputs": {
+                "feeProtocol0Old": {
+                    "type": "uint8",
+                    "indexed": false,
+                    "description": "The previous value of the token0 protocol fee"
+                },
+                "feeProtocol1Old": {
+                    "type": "uint8",
+                    "indexed": false,
+                    "description": "The previous value of the token1 protocol fee"
+                },
+                "feeProtocol0New": {
+                    "type": "uint8",
+                    "indexed": false,
+                    "description": "The updated value of the token0 protocol fee"
+                },
+                "feeProtocol1New": {
+                    "type": "uint8",
+                    "indexed": false,
+                    "description": "The updated value of the token1 protocol fee"
+                }
+            },
+            "notice": "Emitted when the protocol fee is changed by the pool"
+        },
+        "Swap": {
+            "code": "event Swap(address indexed sender, address indexed recipient, int256 amount0, int256 amount1, uint160 sqrtPriceX96, uint128 liquidity, int24 tick)",
+            "inputs": {
+                "sender": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The address that initiated the swap call, and that received the callback"
+                },
+                "recipient": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The address that received the output of the swap"
+                },
+                "amount0": {
+                    "type": "int256",
+                    "indexed": false,
+                    "description": "The delta of the token0 balance of the pool"
+                },
+                "amount1": {
+                    "type": "int256",
+                    "indexed": false,
+                    "description": "The delta of the token1 balance of the pool"
+                },
+                "sqrtPriceX96": {
+                    "type": "uint160",
+                    "indexed": false,
+                    "description": "The sqrt(price) of the pool after the swap, as a Q64.96"
+                },
+                "liquidity": {
+                    "type": "uint128",
+                    "indexed": false,
+                    "description": "The liquidity of the pool after the swap"
+                },
+                "tick": {
+                    "type": "int24",
+                    "indexed": false,
+                    "description": "The log base 1.0001 of price of the pool after the swap"
+                }
+            },
+            "notice": "Emitted by the pool for any swaps between token0 and token1"
+        }
+    },
+    "errors": {},
+    "path": "v3-core/contracts/interfaces/pool",
+    "title": "Events emitted by a pool",
+    "notice": "Contains all events emitted by the pool",
+    "name": "IUniswapV3PoolEvents"
+}

@@ -1,0 +1,314 @@
+{
+    "methods": {
+        "calculateMargin(uint256,uint256)": {
+            "stateMutability": "view",
+            "code": "function calculateMargin(uint256 _firstPrice, uint256 _lastPrice) external view returns (uint256 _margins)",
+            "inputs": {
+                "_firstPrice": {
+                    "type": "uint256",
+                    "description": "Token price on deposit"
+                },
+                "_lastPrice": {
+                    "type": "uint256",
+                    "description": "Token price on withdrawal"
+                }
+            },
+            "outputs": {
+                "_margins": {
+                    "type": "uint256",
+                    "description": "returns margin"
+                }
+            },
+            "notice": "Calculate margin"
+        },
+        "chainlinkDecimals()": {
+            "stateMutability": "view",
+            "code": "function chainlinkDecimals() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "chainlinkPriceFeed()": {
+            "stateMutability": "view",
+            "code": "function chainlinkPriceFeed() external view returns (contract ChainlinkPriceFeed)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract ChainlinkPriceFeed"
+                }
+            }
+        },
+        "editDecimalsTo8(uint256)": {
+            "stateMutability": "view",
+            "code": "function editDecimalsTo8(uint256 _amount) external view returns (uint256)",
+            "inputs": {
+                "_amount": {
+                    "type": "uint256",
+                    "description": "Token amount"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256",
+                    "description": "_amount returns amount in chainlink decimals"
+                }
+            },
+            "notice": "Edit token decimals to chainlink decimals"
+        },
+        "editDecimalsToToken(uint256)": {
+            "stateMutability": "view",
+            "code": "function editDecimalsToToken(uint256 _amount) external view returns (uint256)",
+            "inputs": {
+                "_amount": {
+                    "type": "uint256",
+                    "description": "Token amount"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256",
+                    "description": "_amount returns amount in token decimals"
+                }
+            },
+            "notice": "Edit chainlink decimals to token decimals"
+        },
+        "getChainlinkProxies(address)": {
+            "stateMutability": "view",
+            "code": "function getChainlinkProxies(address _token) external view returns (address)",
+            "inputs": {
+                "_token": {
+                    "type": "address",
+                    "description": "address token"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address",
+                    "description": "chainlinkProxies returns chainlink proxies"
+                }
+            },
+            "notice": "get chainlink proxies"
+        },
+        "getTokensPrice(address[])": {
+            "stateMutability": "view",
+            "code": "function getTokensPrice(address[] _tokens) external view returns (uint256[])",
+            "inputs": {
+                "_tokens": {
+                    "type": "address[]",
+                    "description": "An array of addresses of the tokens whose prices you want to get"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256[]",
+                    "description": "_prices returns the prices of the tokens in $"
+                }
+            },
+            "notice": "Gets token prices in $"
+        },
+        "getUniswapFees(address)": {
+            "stateMutability": "view",
+            "code": "function getUniswapFees(address _token) external view returns (uint24)",
+            "inputs": {
+                "_token": {
+                    "type": "address",
+                    "description": "address token"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint24",
+                    "description": "uniswapFees returns uniswap fees"
+                }
+            },
+            "notice": "get uniswap fees"
+        },
+        "margin()": {
+            "stateMutability": "view",
+            "code": "function margin() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "removeSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function removeSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setChainlinkDecimals(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setChainlinkDecimals(uint256 _chainlinkDecimals) external nonpayable",
+            "inputs": {
+                "_chainlinkDecimals": {
+                    "type": "uint256",
+                    "description": "chainlink decimals"
+                }
+            },
+            "outputs": {},
+            "notice": "set chainlink decimals"
+        },
+        "setChainlinkPriceFeed(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setChainlinkPriceFeed(contract ChainlinkPriceFeed _chainlinkPriceFeed) external nonpayable",
+            "inputs": {
+                "_chainlinkPriceFeed": {
+                    "type": "contract ChainlinkPriceFeed",
+                    "description": "The contact address of the chanlink price feed"
+                }
+            },
+            "outputs": {},
+            "notice": "Set chainlink price feed"
+        },
+        "setMargin(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setMargin(uint256 _margin) external nonpayable",
+            "inputs": {
+                "_margin": {
+                    "type": "uint256",
+                    "description": "margin"
+                }
+            },
+            "outputs": {},
+            "notice": "Set margin"
+        },
+        "setProxyInfo(address[],address[])": {
+            "stateMutability": "nonpayable",
+            "code": "function setProxyInfo(address[] _tokens, address[] _proxies) external nonpayable",
+            "inputs": {
+                "_tokens": {
+                    "type": "address[]",
+                    "description": "An array of addresses of the tokens"
+                },
+                "_proxies": {
+                    "type": "address[]",
+                    "description": "An array of addresses of the proxies in chainlink"
+                }
+            },
+            "outputs": {},
+            "notice": "Set proxy for tokens for chainlink price feed"
+        },
+        "setSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setStatusPriceFeedUniswap(bool)": {
+            "stateMutability": "nonpayable",
+            "code": "function setStatusPriceFeedUniswap(bool _statusPriceFeedUniswap) external nonpayable",
+            "inputs": {
+                "_statusPriceFeedUniswap": {
+                    "type": "bool",
+                    "description": "Price feed from uniswap or chainlink"
+                }
+            },
+            "outputs": {},
+            "notice": "Set status price feed uniswap. Needed only when our chanlink broke"
+        },
+        "setUniswapFees(address[],uint24[])": {
+            "stateMutability": "nonpayable",
+            "code": "function setUniswapFees(address[] _tokens, uint24[] _fees) external nonpayable",
+            "inputs": {
+                "_tokens": {
+                    "type": "address[]",
+                    "description": "An array of addresses of the tokens"
+                },
+                "_fees": {
+                    "type": "uint24[]",
+                    "description": "An array of addresses of the fees in uniswap"
+                }
+            },
+            "outputs": {},
+            "notice": "Set uniswap fees"
+        },
+        "setUniswapPriceFeed(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setUniswapPriceFeed(contract IUniswapPriceFeed _uniswapPriceFeed) external nonpayable",
+            "inputs": {
+                "_uniswapPriceFeed": {
+                    "type": "contract IUniswapPriceFeed",
+                    "description": "The contact address of the uniswap price feed"
+                }
+            },
+            "outputs": {},
+            "notice": "Set uniswap price feed"
+        },
+        "setUsd(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setUsd(address _usd) external nonpayable",
+            "inputs": {
+                "_usd": {
+                    "type": "address",
+                    "description": "stablecoin dollar address"
+                }
+            },
+            "outputs": {},
+            "notice": "Set stablecoin dollar address"
+        },
+        "specialAddresses(address)": {
+            "stateMutability": "view",
+            "code": "function specialAddresses(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "statusPriceFeedUniswap()": {
+            "stateMutability": "view",
+            "code": "function statusPriceFeedUniswap() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "uniswapPriceFeed()": {
+            "stateMutability": "view",
+            "code": "function uniswapPriceFeed() external view returns (contract IUniswapPriceFeed)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract IUniswapPriceFeed"
+                }
+            }
+        },
+        "usd()": {
+            "stateMutability": "view",
+            "code": "function usd() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/price-feeds",
+    "title": "Price feed and calculator contract",
+    "notice": "Here you can calculate the margin and price of tokens taken from oracles",
+    "name": "Calculator"
+}

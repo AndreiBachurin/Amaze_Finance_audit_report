@@ -1,0 +1,448 @@
+{
+    "methods": {
+        "addLiquidity(address[],uint256[],uint256)": {
+            "stateMutability": "payable",
+            "code": "function addLiquidity(address[] _tokens, uint256[] _amounts, uint256 _idNFT) external payable",
+            "inputs": {
+                "_tokens": {
+                    "type": "address[]",
+                    "description": "addresses of tokens which should be in portfolio"
+                },
+                "_amounts": {
+                    "type": "uint256[]",
+                    "description": "amounts of tokens which should be in portfolio"
+                },
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "id portfolio for adding liquidity"
+                }
+            },
+            "outputs": {},
+            "notice": "Adds liquidity to portfolio"
+        },
+        "amaze()": {
+            "stateMutability": "view",
+            "code": "function amaze() external view returns (contract NFT)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract NFT"
+                }
+            }
+        },
+        "buyPremium()": {
+            "stateMutability": "nonpayable",
+            "code": "function buyPremium() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "notice": "Changes premium status of sender"
+        },
+        "calculator()": {
+            "stateMutability": "view",
+            "code": "function calculator() external view returns (contract Calculator)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract Calculator"
+                }
+            }
+        },
+        "cost()": {
+            "stateMutability": "view",
+            "code": "function cost() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "createPortfolio(address[],uint256[])": {
+            "stateMutability": "payable",
+            "code": "function createPortfolio(address[] _tokens, uint256[] _amounts) external payable",
+            "inputs": {
+                "_tokens": {
+                    "type": "address[]",
+                    "description": "addresses of tokens which should be in portfolio"
+                },
+                "_amounts": {
+                    "type": "uint256[]",
+                    "description": "amounts of tokens which should be in portfolio"
+                }
+            },
+            "outputs": {},
+            "notice": "Creating NFT portfolio for user"
+        },
+        "feeKeeper()": {
+            "stateMutability": "view",
+            "code": "function feeKeeper() external view returns (address payable)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address payable"
+                }
+            }
+        },
+        "getAmaze()": {
+            "stateMutability": "view",
+            "code": "function getAmaze() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address",
+                    "description": "amaze address"
+                }
+            },
+            "notice": "Get amaze"
+        },
+        "getBalanceFee(address)": {
+            "stateMutability": "view",
+            "code": "function getBalanceFee(address _token) external view returns (uint256)",
+            "inputs": {
+                "_token": {
+                    "type": "address",
+                    "description": "token address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256",
+                    "description": "balanceFee of this token"
+                }
+            },
+            "notice": "Get balance of company margin for token address"
+        },
+        "getCost()": {
+            "stateMutability": "view",
+            "code": "function getCost() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256",
+                    "description": "cost of premium"
+                }
+            },
+            "notice": "Get cost of premium status"
+        },
+        "getNativeToken()": {
+            "stateMutability": "view",
+            "code": "function getNativeToken() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address",
+                    "description": "native address"
+                }
+            },
+            "notice": "Get native token address"
+        },
+        "getPaymentToken()": {
+            "stateMutability": "view",
+            "code": "function getPaymentToken() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address",
+                    "description": "paymentToken address"
+                }
+            },
+            "notice": "Get paymentToken"
+        },
+        "getTokenBalance(address)": {
+            "stateMutability": "view",
+            "code": "function getTokenBalance(contract IERC20 _tokenAddress) external view returns (uint256)",
+            "inputs": {
+                "_tokenAddress": {
+                    "type": "contract IERC20",
+                    "description": "token address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256",
+                    "description": "balance of this accounts"
+                }
+            },
+            "notice": "Get balance token of this contract"
+        },
+        "native()": {
+            "stateMutability": "view",
+            "code": "function native() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "paymentToken()": {
+            "stateMutability": "view",
+            "code": "function paymentToken() external view returns (contract IERC20)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract IERC20"
+                }
+            }
+        },
+        "removeLiquidity(address[],uint256[],uint256)": {
+            "stateMutability": "payable",
+            "code": "function removeLiquidity(address[] _tokens, uint256[] _amounts, uint256 _idNFT) external payable",
+            "inputs": {
+                "_tokens": {
+                    "type": "address[]",
+                    "description": "addresses of removing tokens"
+                },
+                "_amounts": {
+                    "type": "uint256[]",
+                    "description": "amounts for remove"
+                },
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "id portfolio to remove liquidity"
+                }
+            },
+            "outputs": {},
+            "notice": "Removing liquidity from portfolio"
+        },
+        "removePortfolio(uint256)": {
+            "stateMutability": "payable",
+            "code": "function removePortfolio(uint256 _idNFT) external payable",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "id portfolio to remove portfolio"
+                }
+            },
+            "outputs": {},
+            "notice": "Removing all liquidity from portfolio and removing NFT"
+        },
+        "removeSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function removeSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setAmaze(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setAmaze(contract NFT _newAmaze) external nonpayable",
+            "inputs": {
+                "_newAmaze": {
+                    "type": "contract NFT",
+                    "description": "new NFT contract address"
+                }
+            },
+            "outputs": {},
+            "notice": "Set NFT contract address"
+        },
+        "setCost(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setCost(uint256 _newCost) external nonpayable",
+            "inputs": {
+                "_newCost": {
+                    "type": "uint256",
+                    "description": "new cost"
+                }
+            },
+            "outputs": {},
+            "notice": "Set new cost for premium"
+        },
+        "setNativeToken(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setNativeToken(address _newNative) external nonpayable",
+            "inputs": {
+                "_newNative": {
+                    "type": "address",
+                    "description": "new address for native token"
+                }
+            },
+            "outputs": {},
+            "notice": "Set address for native token"
+        },
+        "setPaymentToken(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setPaymentToken(contract IERC20 _newToken) external nonpayable",
+            "inputs": {
+                "_newToken": {
+                    "type": "contract IERC20",
+                    "description": "new address of payment token"
+                }
+            },
+            "outputs": {},
+            "notice": "Set payment token"
+        },
+        "setSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "specialAddresses(address)": {
+            "stateMutability": "view",
+            "code": "function specialAddresses(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "withdrawTokens(address[],uint256[],uint256)": {
+            "stateMutability": "payable",
+            "code": "function withdrawTokens(contract IERC20[] _tokenAddresses, uint256[] _amounts, uint256 _amountNative) external payable",
+            "inputs": {
+                "_tokenAddresses": {
+                    "type": "contract IERC20[]",
+                    "description": "token addresses to withdraw"
+                },
+                "_amounts": {
+                    "type": "uint256[]",
+                    "description": "amounts of tokens to withdraw"
+                },
+                "_amountNative": {
+                    "type": "uint256",
+                    "description": "amount native"
+                }
+            },
+            "outputs": {},
+            "notice": "Withdraws margin from contract portfolio"
+        }
+    },
+    "events": {
+        "AddLiquidity": {
+            "code": "event AddLiquidity(address indexed owner, uint256 indexed id, address[] tokens, uint256[] amounts, uint256[] prices, uint256 timestamp)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "id": {
+                    "type": "uint256",
+                    "indexed": true
+                },
+                "tokens": {
+                    "type": "address[]",
+                    "indexed": false
+                },
+                "amounts": {
+                    "type": "uint256[]",
+                    "indexed": false
+                },
+                "prices": {
+                    "type": "uint256[]",
+                    "indexed": false
+                },
+                "timestamp": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "BuyPremium": {
+            "code": "event BuyPremium(address indexed from, contract IERC20 indexed token, uint256 indexed amount)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "token": {
+                    "type": "contract IERC20",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        },
+        "Create": {
+            "code": "event Create(address indexed owner, uint256 indexed id, address[] tokens, uint256[] amounts, uint256[] prices, uint256 timestamp)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "id": {
+                    "type": "uint256",
+                    "indexed": true
+                },
+                "tokens": {
+                    "type": "address[]",
+                    "indexed": false
+                },
+                "amounts": {
+                    "type": "uint256[]",
+                    "indexed": false
+                },
+                "prices": {
+                    "type": "uint256[]",
+                    "indexed": false
+                },
+                "timestamp": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "EtherFee": {
+            "code": "event EtherFee(address indexed from, uint256 indexed amountFee)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amountFee": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        },
+        "Fallback": {
+            "code": "event Fallback(address indexed sender, uint256 indexed value)",
+            "inputs": {
+                "sender": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "value": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        },
+        "TokenFee": {
+            "code": "event TokenFee(address indexed token, address indexed from, uint256 indexed amountFee)",
+            "inputs": {
+                "token": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amountFee": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "/portfolio",
+    "title": "Investment portfolios contract",
+    "notice": "You can only use this contract to add and remove liquidity in your portfolio",
+    "name": "Portfolio"
+}

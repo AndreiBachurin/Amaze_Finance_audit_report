@@ -1,0 +1,9 @@
+{
+    "methods": {},
+    "events": {},
+    "errors": {},
+    "path": "v3-periphery/contracts/libraries",
+    "title": "Oracle library",
+    "notice": "Provides functions to integrate with V3 pool oracle",
+    "name": "OracleLibrary"
+}

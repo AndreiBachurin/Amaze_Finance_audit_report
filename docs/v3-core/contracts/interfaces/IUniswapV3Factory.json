@@ -1,0 +1,187 @@
+{
+    "methods": {
+        "createPool(address,address,uint24)": {
+            "stateMutability": "nonpayable",
+            "code": "function createPool(address tokenA, address tokenB, uint24 fee) external nonpayable returns (address pool)",
+            "inputs": {
+                "tokenA": {
+                    "type": "address",
+                    "description": "One of the two tokens in the desired pool"
+                },
+                "tokenB": {
+                    "type": "address",
+                    "description": "The other of the two tokens in the desired pool"
+                },
+                "fee": {
+                    "type": "uint24",
+                    "description": "The desired fee for the pool"
+                }
+            },
+            "outputs": {
+                "pool": {
+                    "type": "address",
+                    "description": "The address of the newly created pool"
+                }
+            },
+            "notice": "Creates a pool for the given two tokens and fee",
+            "details": "tokenA and tokenB may be passed in either order: token0/token1 or token1/token0. tickSpacing is retrieved from the fee. The call will revert if the pool already exists, the fee is invalid, or the token arguments are invalid."
+        },
+        "enableFeeAmount(uint24,int24)": {
+            "stateMutability": "nonpayable",
+            "code": "function enableFeeAmount(uint24 fee, int24 tickSpacing) external nonpayable",
+            "inputs": {
+                "fee": {
+                    "type": "uint24",
+                    "description": "The fee amount to enable, denominated in hundredths of a bip (i.e. 1e-6)"
+                },
+                "tickSpacing": {
+                    "type": "int24",
+                    "description": "The spacing between ticks to be enforced for all pools created with the given fee amount"
+                }
+            },
+            "outputs": {},
+            "notice": "Enables a fee amount with the given tickSpacing",
+            "details": "Fee amounts may never be removed once enabled"
+        },
+        "feeAmountTickSpacing(uint24)": {
+            "stateMutability": "view",
+            "code": "function feeAmountTickSpacing(uint24 fee) external view returns (int24)",
+            "inputs": {
+                "fee": {
+                    "type": "uint24",
+                    "description": "The enabled fee, denominated in hundredths of a bip. Returns 0 in case of unenabled fee"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "int24",
+                    "description": "The tick spacing"
+                }
+            },
+            "notice": "Returns the tick spacing for a given fee amount, if enabled, or 0 if not enabled",
+            "details": "A fee amount can never be removed, so this value should be hard coded or cached in the calling context"
+        },
+        "getPool(address,address,uint24)": {
+            "stateMutability": "view",
+            "code": "function getPool(address tokenA, address tokenB, uint24 fee) external view returns (address pool)",
+            "inputs": {
+                "tokenA": {
+                    "type": "address",
+                    "description": "The contract address of either token0 or token1"
+                },
+                "tokenB": {
+                    "type": "address",
+                    "description": "The contract address of the other token"
+                },
+                "fee": {
+                    "type": "uint24",
+                    "description": "The fee collected upon every swap in the pool, denominated in hundredths of a bip"
+                }
+            },
+            "outputs": {
+                "pool": {
+                    "type": "address",
+                    "description": "The pool address"
+                }
+            },
+            "notice": "Returns the pool address for a given pair of tokens and a fee, or address 0 if it does not exist",
+            "details": "tokenA and tokenB may be passed in either token0/token1 or token1/token0 order"
+        },
+        "owner()": {
+            "stateMutability": "view",
+            "code": "function owner() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address",
+                    "description": "The address of the factory owner"
+                }
+            },
+            "notice": "Returns the current owner of the factory",
+            "details": "Can be changed by the current owner via setOwner"
+        },
+        "setOwner(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setOwner(address _owner) external nonpayable",
+            "inputs": {
+                "_owner": {
+                    "type": "address",
+                    "description": "The new owner of the factory"
+                }
+            },
+            "outputs": {},
+            "notice": "Updates the owner of the factory",
+            "details": "Must be called by the current owner"
+        }
+    },
+    "events": {
+        "FeeAmountEnabled": {
+            "code": "event FeeAmountEnabled(uint24 indexed fee, int24 indexed tickSpacing)",
+            "inputs": {
+                "fee": {
+                    "type": "uint24",
+                    "indexed": true,
+                    "description": "The enabled fee, denominated in hundredths of a bip"
+                },
+                "tickSpacing": {
+                    "type": "int24",
+                    "indexed": true,
+                    "description": "The minimum number of ticks between initialized ticks for pools created with the given fee"
+                }
+            },
+            "notice": "Emitted when a new fee amount is enabled for pool creation via the factory"
+        },
+        "OwnerChanged": {
+            "code": "event OwnerChanged(address indexed oldOwner, address indexed newOwner)",
+            "inputs": {
+                "oldOwner": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The owner before the owner was changed"
+                },
+                "newOwner": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The owner after the owner was changed"
+                }
+            },
+            "notice": "Emitted when the owner of the factory is changed"
+        },
+        "PoolCreated": {
+            "code": "event PoolCreated(address indexed token0, address indexed token1, uint24 indexed fee, int24 tickSpacing, address pool)",
+            "inputs": {
+                "token0": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The first token of the pool by address sort order"
+                },
+                "token1": {
+                    "type": "address",
+                    "indexed": true,
+                    "description": "The second token of the pool by address sort order"
+                },
+                "fee": {
+                    "type": "uint24",
+                    "indexed": true,
+                    "description": "The fee collected upon every swap in the pool, denominated in hundredths of a bip"
+                },
+                "tickSpacing": {
+                    "type": "int24",
+                    "indexed": false,
+                    "description": "The minimum number of ticks between initialized ticks"
+                },
+                "pool": {
+                    "type": "address",
+                    "indexed": false,
+                    "description": "The address of the created pool"
+                }
+            },
+            "notice": "Emitted when a pool is created"
+        }
+    },
+    "errors": {},
+    "path": "v3-core/contracts/interfaces",
+    "title": "The interface for the Uniswap V3 Factory",
+    "notice": "The Uniswap V3 Factory facilitates creation of Uniswap V3 pools and control over the protocol fees",
+    "name": "IUniswapV3Factory"
+}

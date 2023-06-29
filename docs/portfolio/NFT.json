@@ -1,0 +1,659 @@
+{
+    "methods": {
+        "approve(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function approve(address to, uint256 tokenId) external nonpayable",
+            "inputs": {
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {},
+            "details": "See {IERC721-approve}."
+        },
+        "balanceOf(address)": {
+            "stateMutability": "view",
+            "code": "function balanceOf(address owner) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721-balanceOf}."
+        },
+        "burn(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function burn(uint256 _idNFT) external nonpayable",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "NFT id for remove"
+                }
+            },
+            "outputs": {},
+            "notice": "Removes the NFT portfolio"
+        },
+        "getAddresses(uint256,uint256)": {
+            "stateMutability": "view",
+            "code": "function getAddresses(uint256 _idNFT, uint256 _idTimeStamp) external view returns (address[])",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "NFT id for getting token addresses"
+                },
+                "_idTimeStamp": {
+                    "type": "uint256",
+                    "description": "timestamp id for getting token addresses"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address[]",
+                    "description": "addresses returns the addresses of the tokens in the selected timestamp id"
+                }
+            },
+            "notice": "Gets token addresses by timestamp id and NFT"
+        },
+        "getApproved(uint256)": {
+            "stateMutability": "view",
+            "code": "function getApproved(uint256 tokenId) external view returns (address)",
+            "inputs": {
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "See {IERC721-getApproved}."
+        },
+        "getPeriods(uint256)": {
+            "stateMutability": "view",
+            "code": "function getPeriods(uint256 _idNFT) external view returns (uint256[])",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "id of NFT portfolio"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256[]",
+                    "description": "uint256[] array of periods in seconds"
+                }
+            },
+            "notice": "Get all periods of added liquidity"
+        },
+        "getPortfolioAddress()": {
+            "stateMutability": "view",
+            "code": "function getPortfolioAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address",
+                    "description": "address portfolio contract address"
+                }
+            },
+            "notice": "Get portfolio address"
+        },
+        "getPortfolioTimestamps(uint256)": {
+            "stateMutability": "view",
+            "code": "function getPortfolioTimestamps(uint256 _idNFT) external view returns (uint256[])",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "id of NFT portfolio"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256[]",
+                    "description": "uint256[] array of timestamps"
+                }
+            },
+            "notice": "Get all timestamps of added liquidity"
+        },
+        "getPriceData(uint256,address,uint256)": {
+            "stateMutability": "view",
+            "code": "function getPriceData(uint256 _idNFT, address _token, uint256 _idTimeStamp) external view returns (struct NFT.infoPrice)",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "NFT id for getting amount and price of token"
+                },
+                "_token": {
+                    "type": "address",
+                    "description": "token address "
+                },
+                "_idTimeStamp": {
+                    "type": "uint256",
+                    "description": "timestamp id for setting price of token"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "NFT.infoPrice",
+                    "description": "infoPrice struct with amount and price"
+                }
+            },
+            "notice": "Gets amount and price of token by timestamp id, NFT and token address"
+        },
+        "getStatus(address)": {
+            "stateMutability": "view",
+            "code": "function getStatus(address _user) external view returns (bool)",
+            "inputs": {
+                "_user": {
+                    "type": "address",
+                    "description": "address of user"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool",
+                    "description": "bool true or false - status "
+                }
+            },
+            "notice": "Gets user's premium status"
+        },
+        "getTokenBalance(address)": {
+            "stateMutability": "view",
+            "code": "function getTokenBalance(contract IERC20 _tokenAddress) external view returns (uint256)",
+            "inputs": {
+                "_tokenAddress": {
+                    "type": "contract IERC20",
+                    "description": "address of token"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256",
+                    "description": "uint256 amount in wei of tokens"
+                }
+            },
+            "notice": "Get balance of tokens in this contract"
+        },
+        "isApprovedForAll(address,address)": {
+            "stateMutability": "view",
+            "code": "function isApprovedForAll(address owner, address operator) external view returns (bool)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "operator": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "See {IERC721-isApprovedForAll}."
+        },
+        "mint(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function mint(address _user) external nonpayable",
+            "inputs": {
+                "_user": {
+                    "type": "address",
+                    "description": "address of the owner of the new NFT portfolio"
+                }
+            },
+            "outputs": {},
+            "notice": "Сreates a new NFT portfolio"
+        },
+        "name()": {
+            "stateMutability": "view",
+            "code": "function name() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "See {IERC721Metadata-name}."
+        },
+        "ownerOf(uint256)": {
+            "stateMutability": "view",
+            "code": "function ownerOf(uint256 tokenId) external view returns (address)",
+            "inputs": {
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "See {IERC721-ownerOf}."
+        },
+        "portfolio()": {
+            "stateMutability": "view",
+            "code": "function portfolio() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "removeSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function removeSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "safeTransferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function safeTransferFrom(address from, address to, uint256 tokenId) external nonpayable",
+            "inputs": {
+                "from": {
+                    "type": "address"
+                },
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {},
+            "notice": "Overrides safeTransferFrom function to don't allow user transfer NFT portfolio"
+        },
+        "safeTransferFrom(address,address,uint256,bytes)": {
+            "stateMutability": "nonpayable",
+            "code": "function safeTransferFrom(address from, address to, uint256 tokenId, bytes data) external nonpayable",
+            "inputs": {
+                "from": {
+                    "type": "address"
+                },
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                },
+                "data": {
+                    "type": "bytes"
+                }
+            },
+            "outputs": {},
+            "notice": "Overrides safeTransferFrom function to don't allow user transfer NFT portfolio"
+        },
+        "setAddresses(uint256,uint256,address[])": {
+            "stateMutability": "nonpayable",
+            "code": "function setAddresses(uint256 _idNFT, uint256 _idTimeStamp, address[] _addresses) external nonpayable",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "NFT id for setting token addresses"
+                },
+                "_idTimeStamp": {
+                    "type": "uint256",
+                    "description": "timestamp id for setting token addresses"
+                },
+                "_addresses": {
+                    "type": "address[]",
+                    "description": "addresses of tokens to add"
+                }
+            },
+            "outputs": {},
+            "notice": "Set token addresses by timestamp id and NFT"
+        },
+        "setAmount(uint256,address,uint256,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setAmount(uint256 _idNFT, address _token, uint256 _idTimeStamp, uint256 _amount) external nonpayable",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "NFT id for setting amount of token"
+                },
+                "_token": {
+                    "type": "address",
+                    "description": "token address "
+                },
+                "_idTimeStamp": {
+                    "type": "uint256",
+                    "description": "timestamp id for setting price of token"
+                },
+                "_amount": {
+                    "type": "uint256",
+                    "description": "new amount of tokens"
+                }
+            },
+            "outputs": {},
+            "notice": "Set amount of token by timestamp id, NFT and token address"
+        },
+        "setApprovalForAll(address,bool)": {
+            "stateMutability": "nonpayable",
+            "code": "function setApprovalForAll(address operator, bool approved) external nonpayable",
+            "inputs": {
+                "operator": {
+                    "type": "address"
+                },
+                "approved": {
+                    "type": "bool"
+                }
+            },
+            "outputs": {},
+            "details": "See {IERC721-setApprovalForAll}."
+        },
+        "setInfo(uint256,address[],uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setInfo(uint256 _idNFT, address[] _addresses, uint256 _timeStamp) external nonpayable",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "id of NFT portfolio"
+                },
+                "_addresses": {
+                    "type": "address[]",
+                    "description": "addresses of tokens that have been added"
+                },
+                "_timeStamp": {
+                    "type": "uint256",
+                    "description": "timestamp of new liquidity addition"
+                }
+            },
+            "outputs": {},
+            "notice": "Set information about a new liquidity addition"
+        },
+        "setPortfolioAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setPortfolioAddress(address _newPortfolio) external nonpayable",
+            "inputs": {
+                "_newPortfolio": {
+                    "type": "address",
+                    "description": "new portfolio contract address"
+                }
+            },
+            "outputs": {},
+            "notice": "Set new portfolio contract address"
+        },
+        "setPriceData(uint256,address,uint256,uint256,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setPriceData(uint256 _idNFT, address _token, uint256 _idTimeStamp, uint256 _amount, uint256 _price) external nonpayable",
+            "inputs": {
+                "_idNFT": {
+                    "type": "uint256",
+                    "description": "NFT id for setting amount and price of token"
+                },
+                "_token": {
+                    "type": "address",
+                    "description": "token address "
+                },
+                "_idTimeStamp": {
+                    "type": "uint256",
+                    "description": "timestamp id for setting amount and price of token"
+                },
+                "_amount": {
+                    "type": "uint256",
+                    "description": "the number of tokens that have been added"
+                },
+                "_price": {
+                    "type": "uint256",
+                    "description": "the price of 1 token (1 * 10 ** decimals)"
+                }
+            },
+            "outputs": {},
+            "notice": "Set amount and price of token by timestamp id, NFT and token address"
+        },
+        "setSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setStatus(address,bool)": {
+            "stateMutability": "nonpayable",
+            "code": "function setStatus(address _user, bool _type) external nonpayable",
+            "inputs": {
+                "_user": {
+                    "type": "address",
+                    "description": "address of user"
+                },
+                "_type": {
+                    "type": "bool",
+                    "description": "status"
+                }
+            },
+            "outputs": {},
+            "notice": "Change of user's premium status"
+        },
+        "specialAddresses(address)": {
+            "stateMutability": "view",
+            "code": "function specialAddresses(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "supply()": {
+            "stateMutability": "view",
+            "code": "function supply() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256",
+                    "description": "uint256 number of created portfolios"
+                }
+            },
+            "notice": "Get amount of NFT portfolios"
+        },
+        "supplyCounter()": {
+            "stateMutability": "view",
+            "code": "function supplyCounter() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "supportsInterface(bytes4)": {
+            "stateMutability": "view",
+            "code": "function supportsInterface(bytes4 interfaceId) external view returns (bool)",
+            "inputs": {
+                "interfaceId": {
+                    "type": "bytes4"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "See {IERC165-supportsInterface}."
+        },
+        "symbol()": {
+            "stateMutability": "view",
+            "code": "function symbol() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "See {IERC721Metadata-symbol}."
+        },
+        "tokenByIndex(uint256)": {
+            "stateMutability": "view",
+            "code": "function tokenByIndex(uint256 index) external view returns (uint256)",
+            "inputs": {
+                "index": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721Enumerable-tokenByIndex}."
+        },
+        "tokenOfOwnerByIndex(address,uint256)": {
+            "stateMutability": "view",
+            "code": "function tokenOfOwnerByIndex(address owner, uint256 index) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "index": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721Enumerable-tokenOfOwnerByIndex}."
+        },
+        "tokenURI(uint256)": {
+            "stateMutability": "view",
+            "code": "function tokenURI(uint256 tokenId) external view returns (string)",
+            "inputs": {
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "See {IERC721Metadata-tokenURI}."
+        },
+        "totalSupply()": {
+            "stateMutability": "view",
+            "code": "function totalSupply() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC721Enumerable-totalSupply}."
+        },
+        "transferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferFrom(address from, address to, uint256 tokenId) external nonpayable",
+            "inputs": {
+                "from": {
+                    "type": "address"
+                },
+                "to": {
+                    "type": "address"
+                },
+                "tokenId": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {},
+            "notice": "Overrides transferFrom function to don't allow user transfer NFT portfolio"
+        },
+        "withdrawTokensERC20(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function withdrawTokensERC20(contract IERC20 _tokenAddress, address _to, uint256 _amount) external nonpayable",
+            "inputs": {
+                "_tokenAddress": {
+                    "type": "contract IERC20",
+                    "description": "address of token"
+                },
+                "_to": {
+                    "type": "address",
+                    "description": "recipient address"
+                },
+                "_amount": {
+                    "type": "uint256",
+                    "description": "amount to withdraw"
+                }
+            },
+            "outputs": {},
+            "notice": "Withdraws funds accidentally sent to this contract"
+        }
+    },
+    "events": {
+        "Approval": {
+            "code": "event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "approved": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "tokenId": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        },
+        "ApprovalForAll": {
+            "code": "event ApprovalForAll(address indexed owner, address indexed operator, bool approved)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "operator": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "approved": {
+                    "type": "bool",
+                    "indexed": false
+                }
+            }
+        },
+        "Transfer": {
+            "code": "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "to": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "tokenId": {
+                    "type": "uint256",
+                    "indexed": true
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "/portfolio",
+    "title": "NFT investment portfolios contract",
+    "notice": "You can only use this contract to get information about the user's portfolio",
+    "name": "NFT"
+}

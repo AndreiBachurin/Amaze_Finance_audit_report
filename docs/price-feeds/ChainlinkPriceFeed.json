@@ -1,0 +1,25 @@
+{
+    "methods": {
+        "getLatestPrice(address)": {
+            "stateMutability": "view",
+            "code": "function getLatestPrice(address priceFeed) external view returns (int256)",
+            "inputs": {
+                "priceFeed": {
+                    "type": "address",
+                    "description": "address chainlink proxi for token"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "int256",
+                    "description": "price of token"
+                }
+            },
+            "notice": "Returns the latest price of token"
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/price-feeds",
+    "name": "ChainlinkPriceFeed"
+}

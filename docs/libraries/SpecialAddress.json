@@ -1,0 +1,42 @@
+{
+    "methods": {
+        "removeSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function removeSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setSpecialAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setSpecialAddress(address _specialAddress) external nonpayable",
+            "inputs": {
+                "_specialAddress": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "specialAddresses(address)": {
+            "stateMutability": "view",
+            "code": "function specialAddresses(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/libraries",
+    "name": "SpecialAddress"
+}
